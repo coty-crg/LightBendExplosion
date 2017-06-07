@@ -77,7 +77,7 @@ Shader "Hidden/LenseEffect"
 
 			fixed4 frag (v2f i) : SV_Target
 			{
-				float time = (sin(_Time.y) + 1) * 0.5;//_Position; 
+				float time = _Position * 0.5; //(sin(_Time.y) + 1) * 0.5;//_Position; 
 				float4 grabUv = i.grabPos; 
 
 				float distFromCenter = 1 - normalizeRange(time, _Size + time, length(i.uv - 0.5));
